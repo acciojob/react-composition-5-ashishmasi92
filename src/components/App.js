@@ -1,26 +1,37 @@
 
 import React,{useState} from "react";
 import './../styles/App.css';
-import Tab1 from "./Tab1";
-import Tab2 from "./Tab2";
+import Tab from "./Tab"
 const App = () => {
-let [tab1,setTab1] = useState("Tab 1")
-let [tab2,setTab2] = useState("Tab A")
 
+const firstTabs = [
+    { title: 'Tab 1', content: 'Content for Tab 1' },
+    { title: 'Tab 2', content: 'Content for Tab 2' },
+    { title: 'Tab 3', content: 'Content for Tab 3' },
+  ];
+
+  const secondTabs = [
+    { title: 'Tab A', content: 'Content for Tab A' },
+    { title: 'Tab B', content: 'Content for Tab B' },
+    { title: 'Tab C', content: 'Content for Tab C' },
+  ];
 
 
 
   return (
     <div>
-<Tab1
-setTab = {setTab1}
-/>
-<p>Component for {tab1}</p>
-<Tab2
-setTab={setTab2}
+
+
+<Tab
+id="tabs1"
+tabs={firstTabs}
 />
 
-<p>Component for {tab2}</p>
+<Tab
+id="tabs2"
+tabs={secondTabs}
+/>
+
 
     </div>
   )
